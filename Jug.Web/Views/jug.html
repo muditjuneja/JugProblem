@@ -1,0 +1,51 @@
+<div class="container">
+    
+	<br>
+	<br>
+    <div class="form-group">
+		<label>Jug 1 Capacity</label>
+		<input kendo-slider="" k-min="1" k-max="10" ng-model="jugSize1" />
+    </div>
+    
+	<br>
+	<div class="form-group">
+	<label>Jug 2 Capacity</label>
+      <input kendo-slider="" k-min="1" k-max="10" ng-model="jugSize2" />
+    </div>
+	
+	<br>
+	<label>Required Capacity</label>
+	<div class="form-group">
+	<label>Required Capacity</label>
+      <input kendo-slider="" k-min="1" k-max="10" ng-model="requiredAmount" />
+    </div>
+	
+	
+	<div class="row jumbotron">
+      <div class="col-sm-4">
+	  <center><h2>Jug 1 Size</h2>
+	  <h4><strong>{{jugSize1}} ltr.</strong><h4></center>
+	  </div>
+	  <div class="col-sm-4">
+	  <center><h2>Jug 2 Size</h2>
+	  <h4><strong>{{jugSize2}} ltr.</strong><h4></center>
+	  </div>
+	  <div class="col-sm-4">
+	  <center><h2>Required Amount</h2>
+	  <h4><strong>{{requiredAmount}} ltr.</strong><h4></center>
+	  </div>
+    </div>
+	
+	<div class="row">
+	<center>
+	<kendo-button class="k-primary" ng-click="onSubmit()">Get Solution</kendo-button>
+	</center>
+	<br>
+	<ul class="list-group" ng-if="statusList.length > 0">
+		<li class="list-group-item list-group-item-success" ng-repeat="status in statusList">{{status}}</li>
+	</ul>
+	<div class="alert alert-danger" ng-if="statusList.length == 0" role="alert">
+	<strong>Oops</strong> No solutions.
+	</div>
+	</div>
+	
